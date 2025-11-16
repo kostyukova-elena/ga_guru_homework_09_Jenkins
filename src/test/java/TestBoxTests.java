@@ -7,6 +7,7 @@ public class TestBoxTests extends TestBase {
     TestBoxPage testBoxPage = new TestBoxPage();
 
     @Test
+    @Tag("demoga")
     void demoTest() {
         testBoxPage.openPage()
                 .setUserName("Ivanov Ivan")

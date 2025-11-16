@@ -17,8 +17,9 @@ public class DemoQAPageObjectsTest extends TestBase {
         Attach.screenshotAs("Last screenshot");
     }
 
-    @Tag("demoga")
     @Test
+    @Tag("demoga")
+
     void demoFormTest() {
 
         step("Открываем главную страницу", () -> {
@@ -57,6 +58,8 @@ public class DemoQAPageObjectsTest extends TestBase {
     }
 
     @Test
+    @Tag("demoga")
+
     void demoFormTestMinimumData() {
         registrationPage.openPage()
                 .setFirstName("Sergey")
@@ -74,6 +77,7 @@ public class DemoQAPageObjectsTest extends TestBase {
     }
 
     @Test
+    @Tag("demoga")
     void demoFormTestNegativeCheck() {
         registrationPage.openPage()
                 .setFirstName("Sergey")
