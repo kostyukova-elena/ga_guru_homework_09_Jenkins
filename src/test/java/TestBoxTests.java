@@ -2,12 +2,12 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.TestBoxPage;
 
+@Tag("demoqa")
 public class TestBoxTests extends TestBase {
 
     TestBoxPage testBoxPage = new TestBoxPage();
 
     @Test
-    @Tag("demoga")
     void demoTest() {
         testBoxPage.openPage()
                 .setUserName("Ivanov Ivan")

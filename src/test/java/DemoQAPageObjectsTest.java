@@ -7,7 +7,7 @@ import pages.RegistrationPage;
 
 import static io.qameta.allure.Allure.step;
 
-
+@Tag("demoqa")
 public class DemoQAPageObjectsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     ResultComponent resultComponent = new ResultComponent();
@@ -18,10 +18,7 @@ public class DemoQAPageObjectsTest extends TestBase {
     }
 
     @Test
-    @Tag("demoga")
-
     void demoFormTest() {
-
         step("Открываем главную страницу", () -> {
             registrationPage.openPage();
         });
@@ -29,7 +26,6 @@ public class DemoQAPageObjectsTest extends TestBase {
         step("Вводим имя пользователя", () -> {
             registrationPage.setFirstName("Sergey");
         });
-
 
         registrationPage.setLastName("Redko")
                 .setUserEmail("redkoSS@mail.ru")
@@ -58,8 +54,6 @@ public class DemoQAPageObjectsTest extends TestBase {
     }
 
     @Test
-    @Tag("demoga")
-
     void demoFormTestMinimumData() {
         registrationPage.openPage()
                 .setFirstName("Sergey")
@@ -77,7 +71,6 @@ public class DemoQAPageObjectsTest extends TestBase {
     }
 
     @Test
-    @Tag("demoga")
     void demoFormTestNegativeCheck() {
         registrationPage.openPage()
                 .setFirstName("Sergey")
