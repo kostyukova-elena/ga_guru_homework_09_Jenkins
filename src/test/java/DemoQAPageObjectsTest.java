@@ -1,17 +1,36 @@
+import helpers.Attach;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.Component.ResultComponent;
 import pages.RegistrationPage;
+
+import static io.qameta.allure.Allure.step;
 
 
 public class DemoQAPageObjectsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     ResultComponent resultComponent = new ResultComponent();
 
+    @AfterEach
+    void addAttachments(){
+        Attach.screenshotAs("Last screenshot");
+    }
+
+    @Tag("demoga")
     @Test
     void demoFormTest() {
-        registrationPage.openPage()
-                .setFirstName("Sergey")
-                .setLastName("Redko")
+
+        step("Открываем главную страницу", () -> {
+            registrationPage.openPage();
+        });
+
+        step("Вводим имя пользователя", () -> {
+            registrationPage.setFirstName("Sergey");
+        });
+
+
+        registrationPage.setLastName("Redko")
                 .setUserEmail("redkoSS@mail.ru")
                 .setGender("Male")
                 .setPhoneNumber("8345265897")

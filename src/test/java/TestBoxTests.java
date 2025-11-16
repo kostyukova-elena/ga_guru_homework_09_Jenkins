@@ -5,7 +5,7 @@ import pages.TestBoxPage;
 public class TestBoxTests extends TestBase {
 
     TestBoxPage testBoxPage = new TestBoxPage();
-@Tag("demoga")
+
     @Test
     void demoTest() {
         testBoxPage.openPage()
