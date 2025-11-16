@@ -92,5 +92,3 @@ public class DemoQAPageObjectsTest extends TestBase {
         resultComponent.closeNot();
     }
 }
-
-
