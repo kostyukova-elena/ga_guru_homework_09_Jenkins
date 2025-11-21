@@ -99,16 +99,4 @@ public class RegistrationPage {
         submitInput.click();
         return this;
     }
-
-    //Проверка значений
-//    public RegistrationPage checkResult(String key, String value) {
-//        tableInput.$(byText(key)).parent()
-//                .shouldHave(text(value));
-//        return this;
-//    }
-//
-//    public RegistrationPage closeNot() {
-//        closeNot.shouldNot(exist);
-//        return this;
-//    }
 }
