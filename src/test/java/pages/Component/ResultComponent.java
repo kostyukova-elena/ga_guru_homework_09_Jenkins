@@ -2,8 +2,8 @@ package pages.Component;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -18,7 +18,7 @@ public class ResultComponent {
     }
 
     public ResultComponent closeNot() {
-        closeNot.shouldNot(exist);
+        closeNot.shouldNotHave(visible);
         return this;
     }
 }

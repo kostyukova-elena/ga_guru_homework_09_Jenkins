@@ -1,5 +1,3 @@
-import helpers.Attach;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.Component.ResultComponent;
@@ -11,11 +9,6 @@ import static io.qameta.allure.Allure.step;
 public class DemoQAPageObjectsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     ResultComponent resultComponent = new ResultComponent();
-
-    @AfterEach
-    void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-    }
 
     @Test
     void demoFormTest() {

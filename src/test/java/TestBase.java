@@ -1,16 +1,10 @@
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
-import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Map;
-
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class TestBase {
     @BeforeAll
@@ -26,10 +20,12 @@ public class TestBase {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "142.0");
     }
 
     @AfterEach
-    void addAttachments() {
+    void addAttach() {
         if (Configuration.browser.equals("chrome")) {
             Attach.screenshotAs("Last screenshot");
             Attach.pageSource();
