@@ -21,7 +21,8 @@ public class TestBase {
         ));
         Configuration.browserCapabilities = capabilities;
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "142.0");
+//        Configuration.browserVersion = System.getProperty("browserVersion", "142.0");//для локального запуска
+        Configuration.browserVersion = System.getProperty("browserVersion", "128.0"); //для Jenkins
     }
 
     @AfterEach
