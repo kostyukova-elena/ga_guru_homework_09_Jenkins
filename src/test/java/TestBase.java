@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class TestBase {
     @BeforeAll
-    static void beforeAll() {
+    static void setupSelenideEnv() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
@@ -21,8 +21,7 @@ public class TestBase {
         ));
         Configuration.browserCapabilities = capabilities;
         Configuration.browser = System.getProperty("browser", "chrome");
-//        Configuration.browserVersion = System.getProperty("browserVersion", "142.0");//для локального запуска
-        Configuration.browserVersion = System.getProperty("browserVersion", "128.0"); //для Jenkins
+        Configuration.browserVersion = System.getProperty("browserVersion");
     }
 
     @AfterEach

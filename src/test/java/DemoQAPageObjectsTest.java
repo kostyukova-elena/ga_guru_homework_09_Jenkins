@@ -87,14 +87,11 @@ public class DemoQAPageObjectsTest extends TestBase {
                 .setLastName("Redko")
                 .setGender("Male")
                 .setPhoneNumber("8345265897")
-//                .setState("Haryana")
-//                .setCity("Panipat")
                 .submitForm();
 
         resultComponent.checkResult("Student Name", "Sergey Redko")
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "8345265897");
-//                .checkResult("State and City", "Haryana Panipat");
     }
 
     @Test
@@ -105,8 +102,6 @@ public class DemoQAPageObjectsTest extends TestBase {
                 .setUserEmail("redkoSSmail.ru")
                 .setGender("Male")
                 .setPhoneNumber("8345265897")
-//                .setState("Haryana")
-//                .setCity("Panipat")
                 .submitForm();
 
         resultComponent.closeNot();
