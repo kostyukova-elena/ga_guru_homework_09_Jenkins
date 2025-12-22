@@ -16,6 +16,10 @@ public class DemoQAPageObjectsTest extends TestBase {
             registrationPage.openPage();
         });
 
+        step("Удаляем рекламный баннера со страницы", () -> {
+            registrationPage.removingElementsFromPage();
+        });
+
         step("Вводим имя пользователя", () -> {
             registrationPage.setFirstName("Sergey");
         });
@@ -83,6 +87,7 @@ public class DemoQAPageObjectsTest extends TestBase {
     @Test
     void demoFormTestMinimumData() {
         registrationPage.openPage()
+                .removingElementsFromPage()
                 .setFirstName("Sergey")
                 .setLastName("Redko")
                 .setGender("Male")
@@ -97,6 +102,7 @@ public class DemoQAPageObjectsTest extends TestBase {
     @Test
     void demoFormTestNegativeCheck() {
         registrationPage.openPage()
+                .removingElementsFromPage()
                 .setFirstName("Sergey")
                 .setLastName("Redko")
                 .setUserEmail("redkoSSmail.ru")
